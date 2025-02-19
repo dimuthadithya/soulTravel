@@ -1,0 +1,164 @@
+// Import the reset.scss file and the variables.scss file. Then, define the body, orange-text, and container styles as follows:
+@import 'reset.scss';
+
+body {
+  max-height: 100vh;
+}
+
+.orange-text {
+  color: $orange-color;
+}
+
+.orange-btn {
+  background-color: $orange-color;
+  border: 1px solid $orange-color;
+
+  &:hover {
+    background-color: darken($orange-color, 10%);
+  }
+}
+
+.container {
+  .hero-main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .navigation {
+    @media (min-width: 992px) {
+      height: 10vh;
+    }
+  }
+
+  .hero-section {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  nav {
+    font-family: $font-roboto;
+
+    .logo {
+      font-weight: 800;
+    }
+
+    ul > li > a {
+      font-weight: 400;
+      font-size: 17px;
+    }
+  }
+
+  .hero-section {
+    font-family: $font-roboto;
+
+    .container-fluid {
+      h1 {
+        font-size: 60px;
+
+        @media (max-width: 768px) {
+          font-size: 30px;
+        }
+      }
+
+      .child:nth-child(1) {
+        min-width: 350px;
+        max-width: 650px;
+      }
+
+      .child:nth-child(2) {
+        flex-grow: 1;
+        min-width: 300px;
+        max-width: 650px;
+
+        .hero-image {
+          overflow: hidden;
+          position: relative;
+          overflow: hidden;
+
+          .features {
+            position: absolute;
+            animation: shake 20s ease-in-out infinite;
+
+            @keyframes shake {
+              0% {
+                transform: translateY(0);
+              }
+              50% {
+                transform: translate(-20px, -20px);
+              }
+              100% {
+                transform: translateY(0);
+              }
+            }
+
+            > p {
+              text-transform: capitalize;
+              background-color: rgba(47, 37, 37, 0.279);
+              color: #fff;
+              font-size: 16px;
+              padding: 5px 10px;
+              border-radius: 50px;
+            }
+          }
+
+          .features-1 {
+            top: 20%;
+            left: 20%;
+          }
+          .features-2 {
+            bottom: 30%;
+            left: 10%;
+          }
+          .features-3 {
+            top: 30%;
+            right: 10%;
+          }
+          .features-4 {
+            bottom: 20%;
+            right: 10%;
+          }
+
+          svg {
+            fill: $orange-color;
+            animation: bounce 20s ease-in-out infinite;
+
+            @keyframes bounce {
+              0% {
+                transform: translateY(0);
+              }
+              50% {
+                transform: translateY(-20px);
+              }
+              100% {
+                transform: translateY(0);
+              }
+            }
+          }
+
+          .hero-girl-image {
+            position: absolute;
+            top: -90px;
+            left: 0;
+            object-fit: cover;
+            object-position: top center;
+            width: 100%;
+
+            @media (max-width: 768px) {
+              top: -50px;
+            }
+          }
+        }
+      }
+    }
+
+    .adventure {
+      font-weight: bold;
+    }
+
+    .box-picker {
+      background-color: rgb(255, 255, 255);
+    }
+  }
+}
